@@ -18,26 +18,11 @@
     <script
   src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
-        let pseudos = ['Ch Pain Perdu', 'RakanLaBanane', 'Get clownedd', 'B2 Byss']
-        var apiKey = "?api_key=RGAPI-ee01a9ee-b42e-4a7b-ad6f-5d5e5399e40f"
+
+        var apiKey = "?api_key=RGAPI-95712264-cff2-467a-9e09-ffed6dfa177c"
 
     $(document).ready(function(){
       $("button").click(function(){
-          $.each(pseudos, function(i , pseudo){
-            $.getJSON("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ pseudo + apiKey,function(result){
-              console.log(result)
-              var table = document.getElementById("table");
-              var row = table.insertRow(1);
-              var cellPseudo = row.insertCell(0);
-              cellPseudo.id = "pseudo" + pseudo;
-              var cellNiveau = row.insertCell(1);
-              cellNiveau.id = "niveau" + pseudo;
-              console.log(result.name)
-              $("#pseudoGet clownedd" ).html("<b>" + result.name);
-              $("#niveau" + pseudo).html(result.summonerLevel);
-
-            })
-          });
         $.getJSON("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Ch%20Pain%20Perdu"+apiKey,function(result){
           
               console.log(result)
@@ -63,8 +48,8 @@
                     case "GOLD":
                         $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Gold.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
                         break;
-                    case "PLATINIUM":
-                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Platinium.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
+                    case "PLATINUM":
+                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Platinum.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
                         break;
                     case "DIAMOND":
                         $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Diamond.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
@@ -90,8 +75,8 @@
                     case "GOLD":
                         $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Gold.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
                         break;
-                    case "PLATINIUM":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Platinium.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
+                    case "PLATINUM":
+                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Platinum.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
                         break;
                     case "DIAMOND":
                         $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Diamond.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
@@ -117,7 +102,6 @@
     });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
     <h1>
       OP GG DES COPAINS
     </h1>
@@ -160,14 +144,58 @@
                 </td>
               </tr>
               <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
+                <td id="pseudo2"></td>
+                <td id="niveau2"></td>
+                <td id="">
+                    <div id="solo2" class="align-items center-align col s6">
+
+                    </div>
+                    
+                    <div id="flex2"  class="align-items center-align col s6">
+
+                    </div>
+                    
               </tr>
               <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
+                <td id="pseudo3"></td>
+                <td id="niveau3"></td>
+                <td id="">
+                    <div id="solo3" class="align-items center-align col s6">
+
+                    </div>
+                    
+                    <div id="flex3"  class="align-items center-align col s6">
+
+                    </div>
+                    
+              </tr>
+
+              <tr>
+                <td id="pseudo4"></td>
+                <td id="niveau4"></td>
+                <td id="">
+                    <div id="solo4" class="align-items center-align col s6">
+
+                    </div>
+                    
+                    <div id="flex4"  class="align-items center-align col s6">
+
+                    </div>
+                    
+              </tr>
+
+              <tr>
+                <td id="pseudo5"></td>
+                <td id="niveau5"></td>
+                <td id="">
+                    <div id="solo5" class="align-items center-align col s6">
+
+                    </div>
+                    
+                    <div id="flex5"  class="align-items center-align col s6">
+
+                    </div>
+                    
               </tr>
             </tbody>
           </table>
@@ -175,6 +203,9 @@
     <div id="schedules" class="container"></div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="matteo.js"></script>
+    <script src="luc.js"></script>
+    <script src="lucas.js"></script>
+    <script src="fab.js"></script>
   </body>
 </html>
