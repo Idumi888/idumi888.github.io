@@ -18,13 +18,25 @@
     <script
   src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
-        let pseudos = ['Ch%20Pain%20Perdu', 'RakanLaBanane', 'Get%20clownedd', 'B2%20Byss']
+        let pseudos = ['Ch Pain Perdu', 'RakanLaBanane', 'Get clownedd', 'B2 Byss']
         var apiKey = "?api_key=RGAPI-ee01a9ee-b42e-4a7b-ad6f-5d5e5399e40f"
 
     $(document).ready(function(){
       $("button").click(function(){
           $.each(pseudos, function(i , pseudo){
+            $.getJSON("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+ pseudo + apiKey,function(result){
+              console.log(result)
+              var table = document.getElementById("table");
+              var row = table.insertRow(1);
+              var cellPseudo = row.insertCell(0);
+              cellPseudo.id = "pseudo" + pseudo;
+              var cellNiveau = row.insertCell(1);
+              cellNiveau.id = "niveau" + pseudo;
+              console.log(result.name)
+              $("#pseudoGet clownedd" ).html("<b>" + result.name);
+              $("#niveau" + pseudo).html(result.summonerLevel);
 
+            })
           });
         $.getJSON("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Ch%20Pain%20Perdu"+apiKey,function(result){
           
