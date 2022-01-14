@@ -1,7 +1,7 @@
 /* Sortable tables */
 table.sortable thead {
-    background-color:rgb(224, 8, 8);
-    color:#b9b9b9;
-    font-weight: bold;
-    cursor: default;
+  background-color: rgb(224, 8, 8);
+  color: #b9b9b9;
+  font-weight: bold;
+  cursor: default;
 }

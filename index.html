@@ -5,207 +5,103 @@
     <title>:eyes:</title>
 
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-               
-    <script src="sorttable.js"></script>
 
+    <script src="sorttable.js"></script>
   </head>
 
   <body>
     <script
-  src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script>
-
-        var apiKey = "?api_key=RGAPI-95712264-cff2-467a-9e09-ffed6dfa177c"
-
-    $(document).ready(function(){
-      $("button").click(function(){
-        $.getJSON("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Ch%20Pain%20Perdu"+apiKey,function(result){
-          
-              console.log(result)
-              var id = result.id
-              console.log(id)
-            $("#pseudo1").html("<b>" + result.name);
-            $("#niveau1").html(result.summonerLevel);
-
-            $.getJSON("https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/n-DtS1LlM1dyxaOln0PU1CMGzB6PbHk9bvYhg5CZ-63MxbM"+apiKey,
-            function(resultRank){
-                console.log(resultRank[1])
-                console.log(resultRank[1].tier)
-                switch (resultRank[1].tier){
-                    case "IRON":
-                        $("#solo1").html("<img class='' data-caption='Tu pues la merde quoi' width='250' src='images/Emblem_Iron.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                    case "BRONZE":
-                        $("#solo1").html("<img class='' data-caption='Toujours nul du coup' width='250' src='images/Emblem_Bronze.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                    case "SILVER":
-                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Silver.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                    case "GOLD":
-                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Gold.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                    case "PLATINUM":
-                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Platinum.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                    case "DIAMOND":
-                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Diamond.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                    case "MASTER":
-                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Master.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                    case "GRANDMASTER":
-                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Grandmaster.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                    case "CHALLENGER":
-                        $("#solo1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Challenger.png'>" + "<br> " + resultRank[1].rank + " - " + resultRank[1].leaguePoints + "LP" + "<br>" + "W" + resultRank[1].wins + " / L" + resultRank[1].losses + "<br> Winrate: " + Math.round(resultRank[1].wins*100/(resultRank[1].wins+resultRank[1].losses)) + "%");
-                        break;
-                }
-                
-                switch (resultRank[2].tier){
-                    case "BRONZE":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Bronze.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                    case "SILVER":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Silver.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                    case "GOLD":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Gold.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                    case "PLATINUM":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Platinum.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                    case "DIAMOND":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Diamond.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                        case "MASTER":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Master.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                        case "GRANDMASTER":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Grandmaster.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                        case "CHALLENGER":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Challenger.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                        case "IRON":
-                        $("#flex1").html("<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Iron.png'>" + "<br> " + resultRank[2].rank + " - " + resultRank[2].leaguePoints + "LP" + "<br>" + "W" + resultRank[2].wins + " / L" + resultRank[2].losses + "<br> Winrate: " + Math.round(resultRank[2].wins*100/(resultRank[2].wins+resultRank[2].losses)) + "%");
-                        break;
-                }
-            }
-            )
-          
-        });
-      });
-    });
-    </script>
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <h1>
-      OP GG DES COPAINS
-    </h1>
+    <h1>OP GG DES COPAINS</h1>
 
-    <button>Refresh</button>
-
-    <div class="row">
+    
+    <div class="container">
+      <button>Actualiser</button>
+      <div class="row">
         <table class="sortable centered responsive-table" id="table">
-            <thead class="highlight">
-              <tr>
-                  <th>Pseudo</th>
-                  <th>Niveau</th>
-                    <th class="centered">
-                        <div>
-                            Rank
-                        </div>
-                        <div class="col s6">
-                            Solo/Duo
-                        </div>
-                        <div class="col s6">
-                            Flex
-                        </div>
-                    </th>
-              </tr>
-            </thead>
-    
-            <tbody>
-              <tr>
-                <td id="pseudo1"></td>
-                <td id="niveau1"></td>
-                <td id="">
-                    <div id="solo1" class="align-items center-align col s6">
+          <thead class="highlight">
+            <tr>
+              <th>Pseudo</th>
+              <th>Niveau</th>
+              <th class="centered">
+                <div>Rank</div>
+                <div class="col s6">Solo/Duo</div>
+                <div class="col s6">Flex</div>
+              </th>
+            </tr>
+          </thead>
 
-                    </div>
-                    
-                    <div id="flex1"  class="align-items center-align col s6">
+          <tbody>
+            <tr>
+              <td id="pseudo1"></td>
+              <td id="niveau1"></td>
+              <td id="">
+                <div id="solo1" class="align-items center-align col s6"></div>
 
-                    </div>
-                    
-                </td>
-              </tr>
-              <tr>
-                <td id="pseudo2"></td>
-                <td id="niveau2"></td>
-                <td id="">
-                    <div id="solo2" class="align-items center-align col s6">
+                <div id="flex1" class="align-items center-align col s6"></div>
+              </td>
+            </tr>
+            <tr>
+              <td id="pseudo2"></td>
+              <td id="niveau2"></td>
+              <td id="">
+                <div id="solo2" class="align-items center-align col s6"></div>
 
-                    </div>
-                    
-                    <div id="flex2"  class="align-items center-align col s6">
+                <div id="flex2" class="align-items center-align col s6"></div>
+              </td>
+            </tr>
 
-                    </div>
-                    
-              </tr>
-              <tr>
-                <td id="pseudo3"></td>
-                <td id="niveau3"></td>
-                <td id="">
-                    <div id="solo3" class="align-items center-align col s6">
+            <tr>
+              <td id="pseudo3"></td>
+              <td id="niveau3"></td>
+              <td id="">
+                <div id="solo3" class="align-items center-align col s6"></div>
 
-                    </div>
-                    
-                    <div id="flex3"  class="align-items center-align col s6">
+                <div id="flex3" class="align-items center-align col s6"></div>
+              </td>
+            </tr>
 
-                    </div>
-                    
-              </tr>
+            <tr>
+              <td id="pseudo4"></td>
+              <td id="niveau4"></td>
+              <td id="">
+                <div id="solo4" class="align-items center-align col s6"></div>
 
-              <tr>
-                <td id="pseudo4"></td>
-                <td id="niveau4"></td>
-                <td id="">
-                    <div id="solo4" class="align-items center-align col s6">
+                <div id="flex4" class="align-items center-align col s6"></div>
+              </td>
+            </tr>
 
-                    </div>
-                    
-                    <div id="flex4"  class="align-items center-align col s6">
+            <tr>
+              <td id="pseudo5"></td>
+              <td id="niveau5"></td>
+              <td id="">
+                <div id="solo5" class="align-items center-align col s6"></div>
 
-                    </div>
-                    
-              </tr>
-
-              <tr>
-                <td id="pseudo5"></td>
-                <td id="niveau5"></td>
-                <td id="">
-                    <div id="solo5" class="align-items center-align col s6">
-
-                    </div>
-                    
-                    <div id="flex5"  class="align-items center-align col s6">
-
-                    </div>
-                    
-              </tr>
-            </tbody>
-          </table>
+                <div id="flex5" class="align-items center-align col s6"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div id="schedules" class="container"></div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="matteo.js"></script>
     <script src="luc.js"></script>
     <script src="lucas.js"></script>
     <script src="fab.js"></script>
+    <script src="vince.js"></script>
   </body>
 </html>
