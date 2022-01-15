@@ -17,27 +17,27 @@ $(document).ready(function () {
             id +
             apiKey,
           function (resultRank) {
-            console.log(resultRank[0].tier);
             console.log(resultRank[1].tier);
+            console.log(resultRank[0].tier);
 
-            switch (resultRank[0].tier) {
+            switch (resultRank[1].tier) {
               case "IRON":
                 $("#solo5").html(
                   "<img class='' data-caption='Tu pues la merde quoi' width='250' src='images/Emblem_Iron.png'>" +
                     "<br> " +
-                    resultRank[0].rank +
+                    resultRank[1].rank +
                     " - " +
-                    resultRank[0].leaguePoints +
+                    resultRank[1].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[0].wins +
+                    resultRank[1].wins +
                     " / L" +
-                    resultRank[0].losses +
+                    resultRank[1].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
+                      (resultRank[1].wins * 100) /
+                        (resultRank[1].wins + resultRank[1].losses)
                     ) +
                     "%"
                 );
@@ -46,19 +46,19 @@ $(document).ready(function () {
                 $("#solo5").html(
                   "<img class='' data-caption='Toujours nul du coup' width='250' src='images/Emblem_Bronze.png'>" +
                     "<br> " +
-                    resultRank[0].rank +
+                    resultRank[1].rank +
                     " - " +
-                    resultRank[0].leaguePoints +
+                    resultRank[1].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[0].wins +
+                    resultRank[1].wins +
                     " / L" +
-                    resultRank[0].losses +
+                    resultRank[1].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
+                      (resultRank[1].wins * 100) /
+                        (resultRank[1].wins + resultRank[1].losses)
                     ) +
                     "%"
                 );
@@ -67,19 +67,19 @@ $(document).ready(function () {
                 $("#solo5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Silver.png'>" +
                     "<br> " +
-                    resultRank[0].rank +
+                    resultRank[1].rank +
                     " - " +
-                    resultRank[0].leaguePoints +
+                    resultRank[1].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[0].wins +
+                    resultRank[1].wins +
                     " / L" +
-                    resultRank[0].losses +
+                    resultRank[1].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
+                      (resultRank[1].wins * 100) /
+                        (resultRank[1].wins + resultRank[1].losses)
                     ) +
                     "%"
                 );
@@ -88,19 +88,19 @@ $(document).ready(function () {
                 $("#solo5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Gold.png'>" +
                     "<br> " +
-                    resultRank[0].rank +
+                    resultRank[1].rank +
                     " - " +
-                    resultRank[0].leaguePoints +
+                    resultRank[1].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[0].wins +
+                    resultRank[1].wins +
                     " / L" +
-                    resultRank[0].losses +
+                    resultRank[1].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
+                      (resultRank[1].wins * 100) /
+                        (resultRank[1].wins + resultRank[1].losses)
                     ) +
                     "%"
                 );
@@ -109,19 +109,19 @@ $(document).ready(function () {
                 $("#solo5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Platinum.png'>" +
                     "<br> " +
-                    resultRank[0].rank +
+                    resultRank[1].rank +
                     " - " +
-                    resultRank[0].leaguePoints +
+                    resultRank[1].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[0].wins +
+                    resultRank[1].wins +
                     " / L" +
-                    resultRank[0].losses +
+                    resultRank[1].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
+                      (resultRank[1].wins * 100) /
+                        (resultRank[1].wins + resultRank[1].losses)
                     ) +
                     "%"
                 );
@@ -129,93 +129,6 @@ $(document).ready(function () {
               case "DIAMOND":
                 $("#solo5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Diamond.png'>" +
-                    "<br> " +
-                    resultRank[0].rank +
-                    " - " +
-                    resultRank[0].leaguePoints +
-                    "LP" +
-                    "<br>" +
-                    "W" +
-                    resultRank[0].wins +
-                    " / L" +
-                    resultRank[0].losses +
-                    "<br> Winrate: " +
-                    Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
-                    ) +
-                    "%"
-                );
-                break;
-              case "MASTER":
-                $("#solo5").html(
-                  "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Master.png'>" +
-                    "<br> " +
-                    resultRank[0].rank +
-                    " - " +
-                    resultRank[0].leaguePoints +
-                    "LP" +
-                    "<br>" +
-                    "W" +
-                    resultRank[0].wins +
-                    " / L" +
-                    resultRank[0].losses +
-                    "<br> Winrate: " +
-                    Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
-                    ) +
-                    "%"
-                );
-                break;
-              case "GRANDMASTER":
-                $("#solo5").html(
-                  "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Grandmaster.png'>" +
-                    "<br> " +
-                    resultRank[0].rank +
-                    " - " +
-                    resultRank[0].leaguePoints +
-                    "LP" +
-                    "<br>" +
-                    "W" +
-                    resultRank[0].wins +
-                    " / L" +
-                    resultRank[0].losses +
-                    "<br> Winrate: " +
-                    Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
-                    ) +
-                    "%"
-                );
-                break;
-              case "CHALLENGER":
-                $("#solo5").html(
-                  "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Challenger.png'>" +
-                    "<br> " +
-                    resultRank[0].rank +
-                    " - " +
-                    resultRank[0].leaguePoints +
-                    "LP" +
-                    "<br>" +
-                    "W" +
-                    resultRank[0].wins +
-                    " / L" +
-                    resultRank[0].losses +
-                    "<br> Winrate: " +
-                    Math.round(
-                      (resultRank[0].wins * 100) /
-                        (resultRank[0].wins + resultRank[0].losses)
-                    ) +
-                    "%"
-                );
-                break;
-            }
-
-            switch (resultRank[1].tier) {
-              case "BRONZE":
-                $("#flex5").html(
-                  "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Bronze.png'>" +
                     "<br> " +
                     resultRank[1].rank +
                     " - " +
@@ -230,6 +143,94 @@ $(document).ready(function () {
                     Math.round(
                       (resultRank[1].wins * 100) /
                         (resultRank[1].wins + resultRank[1].losses)
+                    ) +
+                    "%"
+                );
+                break;
+              case "MASTER":
+                $("#solo5").html(
+                  "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Master.png'>" +
+                    "<br> " +
+                    resultRank[1].rank +
+                    " - " +
+                    resultRank[1].leaguePoints +
+                    "LP" +
+                    "<br>" +
+                    "W" +
+                    resultRank[1].wins +
+                    " / L" +
+                    resultRank[1].losses +
+                    "<br> Winrate: " +
+                    Math.round(
+                      (resultRank[1].wins * 100) /
+                        (resultRank[1].wins + resultRank[1].losses)
+                    ) +
+                    "%"
+                );
+                break;
+              case "GRANDMASTER":
+                $("#solo5").html(
+                  "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Grandmaster.png'>" +
+                    "<br> " +
+                    resultRank[1].rank +
+                    " - " +
+                    resultRank[1].leaguePoints +
+                    "LP" +
+                    "<br>" +
+                    "W" +
+                    resultRank[1].wins +
+                    " / L" +
+                    resultRank[1].losses +
+                    "<br> Winrate: " +
+                    Math.round(
+                      (resultRank[1].wins * 100) /
+                        (resultRank[1].wins + resultRank[1].losses)
+                    ) +
+                    "%"
+                );
+                break;
+              case "CHALLENGER":
+                $("#solo5").html(
+                  "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Challenger.png'>" +
+                    "<br> " +
+                    resultRank[1].rank +
+                    " - " +
+                    resultRank[1].leaguePoints +
+                    "LP" +
+                    "<br>" +
+                    "W" +
+                    resultRank[1].wins +
+                    " / L" +
+                    resultRank[1].losses +
+                    "<br> Winrate: " +
+                    Math.round(
+                      (resultRank[1].wins * 100) /
+                        (resultRank[1].wins + resultRank[1].losses)
+                    ) +
+                    "%"
+                );
+                break;
+            }
+
+            //FLEX
+            switch (resultRank[0].tier) {
+              case "BRONZE":
+                $("#flex5").html(
+                  "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Bronze.png'>" +
+                    "<br> " +
+                    resultRank[0].rank +
+                    " - " +
+                    resultRank[0].leaguePoints +
+                    "LP" +
+                    "<br>" +
+                    "W" +
+                    resultRank[0].wins +
+                    " / L" +
+                    resultRank[0].losses +
+                    "<br> Winrate: " +
+                    Math.round(
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
@@ -238,19 +239,19 @@ $(document).ready(function () {
                 $("#flex5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Silver.png'>" +
                     "<br> " +
-                    resultRank[1].rank +
+                    resultRank[0].rank +
                     " - " +
-                    resultRank[1].leaguePoints +
+                    resultRank[0].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[1].wins +
+                    resultRank[0].wins +
                     " / L" +
-                    resultRank[1].losses +
+                    resultRank[0].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[1].wins * 100) /
-                        (resultRank[1].wins + resultRank[1].losses)
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
@@ -259,19 +260,19 @@ $(document).ready(function () {
                 $("#flex5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Gold.png'>" +
                     "<br> " +
-                    resultRank[1].rank +
+                    resultRank[0].rank +
                     " - " +
-                    resultRank[1].leaguePoints +
+                    resultRank[0].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[1].wins +
+                    resultRank[0].wins +
                     " / L" +
-                    resultRank[1].losses +
+                    resultRank[0].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[1].wins * 100) /
-                        (resultRank[1].wins + resultRank[1].losses)
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
@@ -280,19 +281,19 @@ $(document).ready(function () {
                 $("#flex5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Platinum.png'>" +
                     "<br> " +
-                    resultRank[1].rank +
+                    resultRank[0].rank +
                     " - " +
                     resultRank[0].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[1].wins +
+                    resultRank[0].wins +
                     " / L" +
-                    resultRank[1].losses +
+                    resultRank[0].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[1].wins * 100) /
-                        (resultRank[1].wins + resultRank[1].losses)
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
@@ -301,19 +302,19 @@ $(document).ready(function () {
                 $("#flex5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Diamond.png'>" +
                     "<br> " +
-                    resultRank[1].rank +
+                    resultRank[0].rank +
                     " - " +
-                    resultRank[1].leaguePoints +
+                    resultRank[0].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[1].wins +
+                    resultRank[0].wins +
                     " / L" +
-                    resultRank[1].losses +
+                    resultRank[0].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[1].wins * 100) /
-                        (resultRank[1].wins + resultRank[1].losses)
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
@@ -322,19 +323,19 @@ $(document).ready(function () {
                 $("#flex5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Master.png'>" +
                     "<br> " +
-                    resultRank[1].rank +
+                    resultRank[0].rank +
                     " - " +
-                    resultRank[1].leaguePoints +
+                    resultRank[0].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[1].wins +
+                    resultRank[0].wins +
                     " / L" +
-                    resultRank[1].losses +
+                    resultRank[0].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[1].wins * 100) /
-                        (resultRank[1].wins + resultRank[1].losses)
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
@@ -343,19 +344,19 @@ $(document).ready(function () {
                 $("#flex5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Grandmaster.png'>" +
                     "<br> " +
-                    resultRank[1].rank +
+                    resultRank[0].rank +
                     " - " +
-                    resultRank[1].leaguePoints +
+                    resultRank[0].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[1].wins +
+                    resultRank[0].wins +
                     " / L" +
-                    resultRank[1].losses +
+                    resultRank[0].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[1].wins * 100) /
-                        (resultRank[1].wins + resultRank[1].losses)
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
@@ -364,19 +365,19 @@ $(document).ready(function () {
                 $("#flex5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Challenger.png'>" +
                     "<br> " +
-                    resultRank[1].rank +
+                    resultRank[0].rank +
                     " - " +
-                    resultRank[1].leaguePoints +
+                    resultRank[0].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[1].wins +
+                    resultRank[0].wins +
                     " / L" +
-                    resultRank[1].losses +
+                    resultRank[0].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[1].wins * 100) /
-                        (resultRank[1].wins + resultRank[1].losses)
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
@@ -385,19 +386,19 @@ $(document).ready(function () {
                 $("#flex5").html(
                   "<img class='' data-caption='Bon va falloir bosser quoi' width='100' src='images/Emblem_Iron.png'>" +
                     "<br> " +
-                    resultRank[1].rank +
+                    resultRank[0].rank +
                     " - " +
-                    resultRank[1].leaguePoints +
+                    resultRank[0].leaguePoints +
                     "LP" +
                     "<br>" +
                     "W" +
-                    resultRank[1].wins +
+                    resultRank[0].wins +
                     " / L" +
-                    resultRank[1].losses +
+                    resultRank[0].losses +
                     "<br> Winrate: " +
                     Math.round(
-                      (resultRank[1].wins * 100) /
-                        (resultRank[1].wins + resultRank[1].losses)
+                      (resultRank[0].wins * 100) /
+                        (resultRank[0].wins + resultRank[0].losses)
                     ) +
                     "%"
                 );
