@@ -9,7 +9,7 @@ $(document).ready(function () {
         console.log(result);
         var id = result.id;
         console.log(id);
-        $("#pseudo1").html("<b>" + result.name);
+        $("#pseudo1").html("<b><a href='profil.html'>" + result.name + "</a>");
         $("#niveau1").html(result.summonerLevel);
 
         $.getJSON(
