@@ -1,5 +1,7 @@
 
 let pseudos = ['Ch Pain Perdu', 'RakanLaBanane', 'Get clownedd', 'B2 Byss']
+let pseudosNoSpace;
+let pseudosApi;
 
 
 
