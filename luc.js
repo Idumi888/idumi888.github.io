@@ -1,7 +1,7 @@
 var apiKey = "?api_key=RGAPI-cb8ee8ae-f150-4f6a-b41b-ade41228819c";
 
 $(document).ready(function () {
-  $("button").click(function () {
+
     $.getJSON(
       "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Ryõmen%20Sukuna" +
         apiKey,
@@ -429,5 +429,5 @@ $(document).ready(function () {
         );
       }
     );
-  });
+
 });

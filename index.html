@@ -23,6 +23,7 @@
     ></script>
     <script src="main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="profil.js"></script>
     <div>
       <nav class="indigo">
         <div class="nav-wrapper">
@@ -36,13 +37,19 @@
       </nav>
     </div>
     <div class="container">
-      
       <div class="row">
-        <br>
-        <div class="center-align"><button class="btn waves-effect waves-light">
-          <span class="material-icons valign-wrapper"> autorenew </span>
-        </button></div>
-        
+        <br />
+        <div class="center-align">
+          <button class="btn waves-effect waves-light" id="refresh">
+            <span class="material-icons valign-wrapper"> autorenew </span>
+          </button>
+          <br />
+          <form action="profil.html">
+            <input type="text" id="searchResult" />
+            <input type="submit" value="Click" onclick="passValues();" />
+          </form>
+        </div>
+
         <table class="sortable centered responsive-table" id="table">
           <thead class="highlight">
             <tr>
@@ -111,10 +118,39 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="matteo.js"></script>
-    <script src="luc.js"></script>
-    <script src="lucas.js"></script>
-    <script src="fab.js"></script>
-    <script src="vince.js"></script>
+    <script src="matteo.js" defer></script>
+    <script src="luc.js" defer></script>
+    <script src="lucas.js" defer></script>
+    <script src="fab.js" defer></script>
+    <script src="vince.js" defer></script>
+
+    <script>
+
+      $.getScript("vince.js", function () {
+        $("button").click(function () {
+          console.log("test1");
+        });
+      });
+      $.getScript("luc.js", function () {
+        $("button").click(function () {
+          console.log("test2");
+        });
+      });
+      $.getScript("lucas.js", function () {
+        $("button").click(function () {
+          console.log("test3");
+        });
+      });
+      $.getScript("matteo.js", function () {
+        $("button").click(function () {
+          console.log("test4");
+        });
+      });
+      $.getScript("fab.js", function () {
+        $("button").click(function () {
+          console.log("test5");
+        });
+      });
+    </script>
   </body>
 </html>

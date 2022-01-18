@@ -1,7 +1,7 @@
 var apiKey = "?api_key=RGAPI-cb8ee8ae-f150-4f6a-b41b-ade41228819c";
 
 $(document).ready(function () {
-  $("button").click(function () {
+  
     $.getJSON(
       "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Ch%20Pain%20Perdu" +
         apiKey,
@@ -9,7 +9,7 @@ $(document).ready(function () {
         console.log(result);
         var id = result.id;
         console.log(id);
-        $("#pseudo1").html("<b><a href='profil.html'>" + result.name + "</a>");
+        $("#pseudo1").html("<b><a id='pseudo' href='profil.html'>" + result.name + "</a>");
         $("#niveau1").html(result.summonerLevel);
 
         $.getJSON(
@@ -420,5 +420,5 @@ $(document).ready(function () {
         );
       }
     );
-  });
+  
 });
