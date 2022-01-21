@@ -9,7 +9,7 @@ var pseudo = (document.getElementById("pseudo").innerHTML =
 
 //Transformation pseudo pour api
 var pseudoAPI = pseudo.replace(/ /g, "%20");
-var apiKey = "?api_key=RGAPI-143ac882-ce18-416d-b2dd-bc5936255a53";
+var apiKey = "?api_key=RGAPI-cd31a2b3-2868-4096-ba9c-a3d4adef30df";
 
 $(document).ready(function () {
   $.getJSON(
