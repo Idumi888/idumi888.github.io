@@ -1,4 +1,4 @@
-var apiKey = "?api_key=RGAPI-c685d105-fb9c-4a50-9c67-72c35854b5eb";
+var apiKey = "?api_key=RGAPI-b8b7156a-45cb-4fc2-bebe-8a7519c7799b";
 
 $(document).ready(function () {
   $.getJSON(
