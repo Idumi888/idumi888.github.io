@@ -40,7 +40,7 @@
       <div class="row">
         <br />
         <div class="center-align">
-          <button class="btn waves-effect waves-light" id="refresh">
+          <button class="btn waves-effect waves-light" onclick="refresh"">
             <span class="material-icons valign-wrapper"> autorenew </span>
           </button>
           <br />
@@ -131,7 +131,7 @@
           console.log("test1");
         });
       });
-      $.getScript("luc.js", function () {
+      $.getScript("lucv2.js", function () {
         $("button").click(function () {
           console.log("test2");
         });
@@ -151,6 +151,12 @@
           console.log("test5");
         });
       });
+    </script>
+    <script >
+
+      function refresh(){
+        window.location.reload("Refresh")
+      }
     </script>
   </body>
 </html>

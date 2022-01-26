@@ -1,4 +1,4 @@
-var apiKey = "?api_key=RGAPI-cd31a2b3-2868-4096-ba9c-a3d4adef30df";
+var apiKey = "?api_key=RGAPI-c685d105-fb9c-4a50-9c67-72c35854b5eb";
 
 $(document).ready(function () {
   
@@ -17,6 +17,8 @@ $(document).ready(function () {
             apiKey,
           function (resultRank) {
             console.log(resultRank[1]);
+            console.log(resultRank[2]);
+            console.log(resultRank[0]);
             console.log(resultRank[1].tier);
 
             var ranks = 0;
@@ -221,6 +223,7 @@ $(document).ready(function () {
                       );
                       break;
                   }
+                  break;
                 case "RANKED_SOLO_5x5":
                   //Solo
                   switch (resultRank[i].tier) {
@@ -414,6 +417,7 @@ $(document).ready(function () {
                       );
                       break;
                   }
+                  break;
               }
             }
           }
